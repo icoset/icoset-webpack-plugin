@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "@geoctrl",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "webpack"
   },
@@ -11,7 +14,7 @@
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   },
-  "dependencies": {
-    "@icoset/icoset": "^0.4.6"
+  "peerDependencies": {
+    "@icoset/icoset": "^0.4"
   }
 }

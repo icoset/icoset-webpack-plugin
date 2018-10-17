@@ -1,6 +1,6 @@
 {
   "name": "@icoset/icoset-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "author": "@geoctrl",
   "license": "MIT",
@@ -8,11 +8,18 @@
     "access": "public"
   },
   "scripts": {
-    "start": "webpack"
+    "start": "webpack-serve --config ./webpack.config.js --content ./dev",
+    "build": "webpack"
   },
   "devDependencies": {
+    "@icoset/icoset": "^0.4",
+    "babel-runtime": "^6.26.0",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-serve": "^2.0.2"
+  },
+  "dependencies": {
+    "webpack-inject-plugin": "^0.5.0"
   },
   "peerDependencies": {
     "@icoset/icoset": "^0.4"

@@ -3,17 +3,17 @@ const IcosetWebpackPlugin = require('./index');
 
 const config = {};
 config.mode = 'development';
-config.entry = resolve(__dirname, 'dev', 'index.js');
+config.entry = resolve(__dirname, 'dev', 'mainly.js');
 config.output = {
   filename: 'bundle.js',
   path: resolve(__dirname, 'dev'),
 };
 
 config.plugins = [
-
   new IcosetWebpackPlugin({
     directory: resolve(__dirname, 'icons'),
     deepFind: true,
+    namePrependDirectory: true,
   }),
 ];
 

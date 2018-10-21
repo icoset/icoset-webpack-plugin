@@ -20,6 +20,6 @@ module.exports = class MyPlugin {
   }
 
   apply(compiler) {
-    compiler.options.plugins.push(new InjectPlugin(customLoader(this.options)));
+    new InjectPlugin(customLoader(this.options)).apply(compiler);
   }
 }

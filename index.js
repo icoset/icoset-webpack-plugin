@@ -20,6 +20,9 @@ module.exports = class MyPlugin {
   }
 
   apply(compiler) {
-    new InjectPlugin(customLoader(this.options)).apply(compiler);
+    const { entryName, ...icosetOptions } = this.options;
+    let pluginOptions;
+    pluginOptions = entryName ? { entryName } : null;
+    new InjectPlugin(customLoader(icosetOptions), pluginOptions).apply(compiler);
   }
 }

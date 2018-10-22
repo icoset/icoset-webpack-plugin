@@ -18,7 +18,7 @@
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
-    "webpack-inject-plugin": "^1.0.1-0"
+    "webpack-inject-plugin": "^1.0.0"
   },
   "peerDependencies": {
     "@icoset/icoset": "^0.4"

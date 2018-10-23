@@ -1,6 +1,6 @@
 {
   "name": "@icoset/icoset-webpack-plugin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "index.js",
   "author": "@geoctrl",
   "license": "MIT",
@@ -18,9 +18,7 @@
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
+    "@icoset/icoset": "^0.4",
     "webpack-inject-plugin": "^1.0.0"
-  },
-  "peerDependencies": {
-    "@icoset/icoset": "^0.4"
   }
 }

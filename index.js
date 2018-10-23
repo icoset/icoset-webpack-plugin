@@ -3,14 +3,22 @@ const icoset = require('@icoset/icoset');
 
 function customLoader(options) {
   return () => icoset(options).then(results => {
-    return `\n\ndocument.addEventListener('DOMContentLoaded', function() {
-  const svg = document.createRange().createContextualFragment(\`${results.svg}\`);
-  if (document.body.childNodes[0]) {
-    document.body.insertBefore(svg, document.body.childNodes[0]);  
-  } else {
-    document.body.appendChild(svg);
+    return `\n
+(function() {
+  function _insertSvgIcons() {
+    const svg = document.createRange().createContextualFragment(\`${results.svg}\`);
+    if (document.body.childNodes[0]) {
+      document.body.insertBefore(svg, document.body.childNodes[0]);  
+    } else {
+      document.body.appendChild(svg);
+    }
   }
-});`;
+  if (/comp|inter|loaded/.test(document.readyState)) {
+    _insertSvgIcons();
+  } else {
+    document.addEventListener('DOMContentLoaded', _insertSvgIcons);
+  }
+})();`;
   });
 }
 

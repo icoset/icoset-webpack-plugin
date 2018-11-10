@@ -18,12 +18,12 @@ config, and dynamically inject it into our final bundle.
 
 ```bash
 // yarn
-$ yarn add @icoset/icoset-webpack-plugin
+$ yarn add @icoset/icoset @icoset/icoset-webpack-plugin
 ```
 
 ```bash
 // npm
-$ npm install -s @icoset/icoset-webpack-plugin
+$ npm install -s @icoset/icoset @icoset/icoset-webpack-plugin
 ```
 
 ## Use

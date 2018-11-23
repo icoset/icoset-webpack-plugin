@@ -18,7 +18,6 @@
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
-    "@icoset/icoset": "^0.4",
     "webpack-inject-plugin": "^1.0.0"
   }
 }

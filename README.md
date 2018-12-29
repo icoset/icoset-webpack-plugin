@@ -46,10 +46,6 @@ module.exports = {
 
 ## Options
 
-All options except `entryName` are just passthrough options for `icoset`.
-
-Check out the [Icoset README](https://github.com/icoset/icoset) to learn more.
-
 ### `entryName` string (Optional)
 
 Depending on the webpack configuration, you might have more then one entry file.
@@ -70,6 +66,16 @@ module.exports = {
   ],
 }
 ```
+
+### `iconMap` boolean (Optional)
+
+Add the `iconMap` to the `window` when the DOM is ready. Default is `false`.
+
+### Icoset Options
+
+You also can pass in `icoset` options (like `directory` and `icons`).
+Check out the [Icoset README](https://github.com/icoset/icoset) to learn more.
+
 
 ## Special Thanks
 

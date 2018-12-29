@@ -6,6 +6,7 @@ function customLoader(options) {
     return `\n
 (function() {
   function _insertSvgIcons() {
+    window.__icoset-icon-map = ${results.iconMap}
     const svg = document.createRange().createContextualFragment(\`${results.svg}\`);
     if (document.body.childNodes[0]) {
       document.body.insertBefore(svg, document.body.childNodes[0]);  

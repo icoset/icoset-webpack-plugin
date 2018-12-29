@@ -12,7 +12,7 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "@icoset/icoset": "^0.4",
+    "@icoset/icoset": "^0.4.10",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-serve": "^2.0.2"

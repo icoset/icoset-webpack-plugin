@@ -2,12 +2,13 @@
 # yarn lockfile v1
 
 
-"@icoset/icoset@^0.4":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@icoset/icoset/-/icoset-0.4.6.tgz#8ace8d0b79c8bc1300bb362ad2dbfc8f9142da67"
-  integrity sha512-0P4xEyFxeq+Lo+DSDmL8Hzmd9aWTCfIJnbm3F2KUcfPp8QDYOeZ5RkEXONMHVUgN/GwHgnbCnHgHAbWuLyoZcw==
+"@icoset/icoset@^0.4.10":
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/@icoset/icoset/-/icoset-0.4.10.tgz#5e5c8e1e8606913cf9012ad3c4d0d04eb89e708e"
+  integrity sha512-2JL6BQc8TAIo17b1og/ez6rCStrCXUz/8qKYJ57dynnsY+jdHDSYWFn0OkxEsmQGs02frKDcALdFf678MMEAfQ==
   dependencies:
-    svgo "^1.0.5"
+    merge "^1.2.1"
+    svgo "^1.1.1"
 
 "@shellscape/koa-send@^4.1.0":
   version "4.1.3"
@@ -2471,6 +2472,11 @@ merge-options@^1.0.0, merge-options@^1.0.1:
   dependencies:
     is-plain-obj "^1.1"
 
+merge@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
+  integrity sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==
+
 micromatch@^3.1.10, micromatch@^3.1.4, micromatch@^3.1.8:
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-3.1.10.tgz#70859bc95c9840952f359a068a3fc49f9ecfac23"
@@ -3755,7 +3761,7 @@ supports-color@^5.3.0, supports-color@^5.5.0:
   dependencies:
     has-flag "^3.0.0"
 
-svgo@^1.0.5:
+svgo@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.1.1.tgz#12384b03335bcecd85cfa5f4e3375fed671cb985"
   integrity sha512-GBkJbnTuFpM4jFbiERHDWhZc/S/kpHToqmZag3aEBjPYK44JAN2QBjvrGIxLOoCyMZjuFQIfTO2eJd8uwLY/9g==

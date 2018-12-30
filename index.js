@@ -5,8 +5,8 @@ function customLoader(options, addIconMap) {
   return () => icoset(options).then(results => {
     return `\n
 (function() {
+  ${addIconMap ? `window.__icosetIconMap = ${JSON.stringify(results.iconMap)};` : ''}
   function _insertSvgIcons() {
-    ${addIconMap ? `window.__icosetIconMap = ${JSON.stringify(results.iconMap)};` : ''}
     const svg = document.createRange().createContextualFragment(\`${results.svg}\`);
     if (document.body.childNodes[0]) {
       document.body.insertBefore(svg, document.body.childNodes[0]);  

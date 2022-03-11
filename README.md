@@ -46,6 +46,11 @@ module.exports = {
 
 ## Options
 
+### `icosetOptions` object (Required)
+
+Pass in icoset options here (like `directory` and `icons`).
+Check out the [Icoset README](https://github.com/icoset/icoset/tree/master/packages/icoset) to learn more.
+
 ### `entryName` string (Optional)
 
 Depending on the webpack configuration, you might have more then one entry file.
@@ -61,24 +66,39 @@ module.exports = {
   plugins: [
     new IcosetWebpackPlugin({
       entryName: 'one', // the plugin will inject the icons into this entry file
-      directory: path.resolve(__dirname, 'icons'),
+      icosetOptions: {
+        directory: path.resolve(__dirname, 'icons'),
+      },
     })
   ],
 }
 ```
 
-### `iconMap` boolean (Optional)
+### `injectionType` "onDocumentLoad" | "window" (optional)
 
-Add the `iconMap` to the `window` when the DOM is ready. Default is `false`.
+Choose how you want your icons added to your app.
 
-### Icoset Options
+- `onDocumentLoad` **DEFAULT** - inject svgs directly into the `<body>` on document load.
+- `window` - inject svgs into a window variable for later use (window variable name defaults to `window.__icoset`).
 
-You also can pass in `icoset` options (like `directory` and `icons`).
-Check out the [Icoset README](https://github.com/icoset/icoset) to learn more.
+### `windowVariableName` string (optional)
 
+If `injectionType === 'window'`, you can change that variable name here.
+
+```javascript
+module.exports = {
+  plugins: [
+    new IcosetWebpackPlugin({
+      injectionType: 'window',
+      windowVariableName: '__whatever_you_want__',
+    })
+  ],
+}
+// output: window.__whatever_you_want__ = "<svg>...</svg>";
+```
 
 ## Special Thanks
 
-I just want to give a big shout out to the guys behind the
+I just want to give a big shout out to our friends behind the
 [`webpack-inject-plugin`](https://github.com/adierkens/webpack-inject-plugin) project. This project
 utilizes that plugin to be able to inject custom code into an entry file.

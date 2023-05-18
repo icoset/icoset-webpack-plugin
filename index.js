@@ -4,15 +4,11 @@ const icoset = require("@icoset/icoset");
 function customLoader(icosetOptions, injectionType, windowVariableName) {
   return () => icoset(icosetOptions).then(results => {
     if (injectionType === "window") {
-      return `window.${windowVariableName} = "${results}"`
+      return `window.${windowVariableName} = \`${results}\`;`;
     }
 
     return `(function() {
-    console.log('insert')
-  let inserted = false;
   function _insertSvgIcons() {
-    if (inserted) return;
-    inserted = true;
     document.removeEventListener("DOMContentLoaded", _insertSvgIcons);
     const svg = document.createRange().createContextualFragment(\`${results}\`);
     if (document.body.childNodes[0]) {

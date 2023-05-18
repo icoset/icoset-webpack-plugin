@@ -1,22 +1,30 @@
-const { resolve } = require('path');
+const path = require('path');
 const IcosetWebpackPlugin = require('./index');
 
 const config = {};
 config.mode = 'development';
 config.entry = {
-  'looky': resolve(__dirname, 'dev', 'mainly.js'),
+  'looky': path.resolve(__dirname, 'dev', 'mainly.js'),
 };
 config.output = {
   filename: 'bundle.js',
-  path: resolve(__dirname, 'dev'),
+  path: path.resolve(__dirname, 'dev'),
 };
 
 config.plugins = [
   new IcosetWebpackPlugin({
-    directory: resolve(__dirname, 'icons'),
-    deepFind: true,
-    namePrependDirectory: true,
+    icosetOptions: {
+      directory: path.resolve(__dirname, 'icons'),
+      deepFind: true,
+      namePrependDirectory: true,
+    },
   }),
 ];
+
+config.devServer = {
+  static: {
+    directory: path.join(__dirname, 'dev')
+  }
+}
 
 module.exports = config;
